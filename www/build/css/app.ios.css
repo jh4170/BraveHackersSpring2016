@@ -7699,6 +7699,8 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
   #start #status-bar {
     border-radius: 10px; }
+  #start .item-inner {
+    border: 0; }
 
 ion-navbar#game-nav {
   position: absolute;
@@ -7938,10 +7940,7 @@ p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.chat {
-  width: 400px; }
-
-.bubble {
+.chat .bubble {
   background-color: #F2F2F2;
   border-radius: 5px;
   box-shadow: 0 0 6px #B2B2B2;
@@ -7949,46 +7948,40 @@ p {
   padding: 10px 18px;
   position: relative;
   vertical-align: top; }
-
-.bubble::before {
-  background-color: #F2F2F2;
-  content: "\00a0";
-  display: block;
-  height: 16px;
-  position: absolute;
-  top: 11px;
-  transform: rotate(29deg) skew(-35deg);
-  -moz-transform: rotate(29deg) skew(-35deg);
-  -ms-transform: rotate(29deg) skew(-35deg);
-  -o-transform: rotate(29deg) skew(-35deg);
-  -webkit-transform: rotate(29deg) skew(-35deg);
-  width: 20px; }
-
-.me {
-  float: left;
-  margin: 5px 45px 5px 20px; }
-
-.me::before {
-  box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
-  left: -9px; }
-
-.you {
-  float: right;
-  margin: 5px 20px 5px 45px; }
-
-.you::before {
-  box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
-  right: -9px; }
+  .chat .bubble.me {
+    float: left;
+    margin: 5px 45px 5px 20px; }
+    .chat .bubble.me:before {
+      box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
+      left: -9px; }
+  .chat .bubble.you {
+    float: right;
+    margin: 5px 20px 5px 45px; }
+    .chat .bubble.you:before {
+      box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
+      right: -9px; }
+  .chat .bubble:before {
+    background-color: #F2F2F2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform: rotate(29deg) skew(-35deg);
+    -moz-transform: rotate(29deg) skew(-35deg);
+    -ms-transform: rotate(29deg) skew(-35deg);
+    -o-transform: rotate(29deg) skew(-35deg);
+    -webkit-transform: rotate(29deg) skew(-35deg);
+    width: 20px; }
 
 /* Bit of normalisation */
 #messages {
   padding: 10px;
   margin-top: 15px; }
-
-img {
-  display: block;
-  height: auto;
-  max-width: 100%; }
+  #messages img {
+    display: block;
+    height: auto;
+    max-width: 100%; }
 
 .container {
   padding: 40px 20px;
@@ -8015,8 +8008,8 @@ img {
   max-width: 10 class=bubble 0%;
   word-wrap: break-word; }
 
-.bubble:before,
-.bubble:after {
+.bubble:after,
+.bubble:before {
   border-radius: 20px / 10px;
   content: '';
   display: block;
@@ -8066,6 +8059,11 @@ img {
   left: auto;
   right: -5px; }
 
+.chatrow {
+  width: 100%;
+  height: calc(100% - 46px);
+  display: inline-block; }
+
 .chatrowl {
   position: relative;
   display: -webkit-inline-box;
@@ -8083,10 +8081,6 @@ img {
 .bubblerl {
   display: inline-block;
   width: 200px; }
-
-.chatrow {
-  width: 100%;
-  display: inline-block; }
 
 .usericon-r {
   display: inline-block;

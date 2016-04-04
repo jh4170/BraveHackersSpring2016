@@ -31,10 +31,7 @@
 <status></status>
 <ion-content id="messages">
     <div>
-        <style>
-
-        </style>
-        <div *ngFor="#m of dialog; #index=index;#isOdd=odd;#isEven=even" style="background: white;">
+        <div *ngFor="#m of dialog; #index=index;#isOdd=odd;#isEven=even">
             <div [class]="isOdd?'chatrowl':'chatrow'">
                 <div [class]="isOdd?'usericonl':'usericon-r'"><img [src]="m.image" height="42" width="42" /></div>
                 <div [class]="isOdd?'bubblel':'bubbler'">
